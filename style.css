@@ -1,6 +1,13 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
+html {
+	box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
 
 body {
 	font-family: sans-serif;
@@ -15,3 +22,74 @@ Mobil   0 - 539px
 Tablet  540px - 959px (čti jako 540px a víc)
 PC      960px a víc
 */
+
+.head {
+	text-align: center;
+}
+
+.box {
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid rgb(215, 202, 202);
+	border-radius: 10px;
+	box-shadow: 0px 2px 3px 0px rgba(131, 212, 212, 0.51);
+	max-width: 70%;
+}
+
+.box img {
+	border-radius: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text p,
+.text h2 {
+	text-align: center;
+}
+
+
+
+@media screen and (min-width: 540px) and (max-width:960px) {
+
+	.boxes {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.box {
+		display: flex;
+		margin: 10px;
+		flex: calc(100 / 2);
+	}
+
+	.box img {
+		flex: 30%;
+	}
+
+	.text h2,
+	.text p {
+		text-align: left;
+		padding: 0 20px;
+	}
+
+}
+
+@media screen and (min-width:960px) {
+	.box {
+		display: block;
+		flex: calc (100 / 4);
+	}
+
+	.text h2,
+	.text p {
+		text-align: center;
+		
+	}
+
+	.boxes {
+		display: flex;
+		gap: 20px;
+	}
+}
+
